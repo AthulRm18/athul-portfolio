@@ -10,38 +10,21 @@ interface AthulSignatureProps {
 
 export function AthulSignature({ className, isFirstVisit }: AthulSignatureProps) {
   return (
-    <motion.svg
-      className={cn("h-[1.2em] w-[2.5em] overflow-visible translate-y-[0.1em]", className)}
-      viewBox="0 0 200 80"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      initial={{ 
-        strokeDasharray: 400, 
-        strokeDashoffset: isFirstVisit ? 400 : 0, 
-        fill: isFirstVisit ? "transparent" : "currentColor" 
+    <motion.span
+      className={cn(
+        "font-[family-name:var(--font-caveat)] text-[1.3em] font-bold tracking-wider relative -bottom-[0.05em]", 
+        className
+      )}
+      initial={isFirstVisit ? { clipPath: "inset(0 100% 0 0)" } : { clipPath: "inset(0 0% 0 0)" }}
+      animate={{ clipPath: "inset(0 0% 0 0)" }}
+      transition={{ 
+        duration: isFirstVisit ? 1.5 : 0, 
+        ease: "easeInOut", 
+        delay: isFirstVisit ? 0.2 : 0 
       }}
-      animate={{ 
-        strokeDashoffset: 0, 
-        fill: "currentColor" 
-      }}
-      transition={{
-        strokeDashoffset: { duration: isFirstVisit ? 2.5 : 0, ease: "easeInOut", delay: isFirstVisit ? 0.3 : 0 },
-        fill: { duration: isFirstVisit ? 1 : 0, delay: isFirstVisit ? 2 : 0, ease: "easeIn" }
-      }}
+      style={{ display: "inline-block" }}
     >
-      <text
-        x="0"
-        y="60"
-        fontFamily="var(--font-instrument), serif"
-        fontSize="65"
-        fontStyle="italic"
-        letterSpacing="-0.02em"
-      >
-        Athul.
-      </text>
-    </motion.svg>
+      Athul.
+    </motion.span>
   );
 }

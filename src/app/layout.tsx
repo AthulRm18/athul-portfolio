@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Instrument_Serif, JetBrains_Mono, Geist } from "next/font/google";
+import { Inter, Instrument_Serif, JetBrains_Mono, Geist, Caveat } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -22,6 +22,12 @@ const instrumentSerif = Instrument_Serif({
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains",
+  display: "swap",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
   display: "swap",
 });
 
@@ -51,7 +57,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(inter.variable, instrumentSerif.variable, jetbrainsMono.variable, "font-sans", geist.variable)}
+      className={cn(inter.variable, instrumentSerif.variable, jetbrainsMono.variable, caveat.variable, "font-sans", geist.variable)}
     >
       <body className="min-h-screen">
         <div className="fixed inset-0 pointer-events-none z-0">
