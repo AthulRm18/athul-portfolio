@@ -17,7 +17,8 @@ export function WorkSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.05 }}
         transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-        className="bg-[#050505] rounded-t-[3rem] md:rounded-t-[4rem] border-t border-white/[0.05] pt-24 pb-32 md:pt-32 md:pb-40 w-full mt-12 relative z-10"
+        className="rounded-t-[3rem] md:rounded-t-[4rem] border-t border-white/[0.12] pt-24 pb-32 md:pt-32 md:pb-40 w-full mt-12 relative z-10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2)]"
+        style={{ backgroundImage: "linear-gradient(to bottom, #434343, #000000 40%)" }}
       >
 
         <div className="max-w-6xl mx-auto px-6 md:px-8 relative z-10">
