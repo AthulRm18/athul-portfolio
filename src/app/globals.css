@@ -47,7 +47,7 @@
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply bg-bg text-fg font-sans antialiased;
     overflow-x: hidden;
   }
 

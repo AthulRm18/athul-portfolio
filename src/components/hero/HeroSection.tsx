@@ -10,6 +10,7 @@ import { AppleHelloEffectEnglish } from "@/components/apple-hello-effect-english
 
 export function HeroSection() {
   const [audience, setAudience] = useState<AudienceId>("anyone");
+  const [showName, setShowName] = useState(false);
   const active = audiences.find((a) => a.id === audience)!;
 
   return (
@@ -29,10 +30,19 @@ export function HeroSection() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="mb-6 flex flex-col gap-1"
           >
-            <AppleHelloEffectEnglish className="h-14 md:h-20 text-fg" durationScale={1.2} />
-            <span className="text-sm md:text-base font-mono text-muted tracking-widest uppercase">
+            <AppleHelloEffectEnglish 
+              className="h-14 md:h-20 text-fg" 
+              durationScale={1.2} 
+              onAnimationComplete={() => setShowName(true)} 
+            />
+            <motion.span 
+              initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
+              animate={showName ? { opacity: 1, filter: "blur(0px)", y: 0 } : {}}
+              transition={{ duration: 1.2, ease: "easeOut" }}
+              className="text-sm md:text-base font-mono text-muted tracking-widest uppercase"
+            >
               Athul R Mohan
-            </span>
+            </motion.span>
           </motion.div>
 
           <motion.div variants={stagger.item}>
