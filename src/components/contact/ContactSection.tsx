@@ -134,26 +134,12 @@ export function ContactSection() {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 mt-2">
-                <a
-                  href="mailto:athumrm518@gmail.com"
-                  className="flex-1 group flex items-center justify-center gap-2.5 py-3.5 px-6 rounded-xl font-semibold text-sm bg-[#222] hover:bg-[#333] border border-[#333] text-white transition-all duration-300"
-                >
-                  <svg className="w-4 h-4 text-white/70 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
-                    <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z" />
-                    <line x1="6" x2="6" y1="2" y2="4" />
-                    <line x1="10" x2="10" y1="2" y2="4" />
-                    <line x1="14" x2="14" y1="2" y2="4" />
-                  </svg>
-                  Jump on a call
-                </a>
-
+              <div className="mt-2">
                 <button
                   type="submit"
                   disabled={status === "sending" || status === "sent"}
                   className={`
-                    flex-1 group flex items-center justify-center gap-2.5 py-3.5 px-6 rounded-xl font-semibold text-sm transition-all duration-300 cursor-pointer
+                    w-full group flex items-center justify-center gap-2.5 py-3.5 px-6 rounded-xl font-semibold text-sm transition-all duration-300 cursor-pointer
                     ${status === "sent"
                       ? "bg-green-500/20 border border-green-500/30 text-green-400"
                       : status === "error"

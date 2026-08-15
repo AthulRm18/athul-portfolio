@@ -17,28 +17,28 @@ export function WorkSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.05 }}
         transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-        className="bg-[#f5f5f7] rounded-t-[3rem] md:rounded-t-[4rem] pt-24 pb-32 md:pt-32 md:pb-40 w-full mt-12 overflow-hidden relative z-10"
+        className="bg-[#050505] rounded-t-[3rem] md:rounded-t-[4rem] border-t border-white/[0.05] pt-24 pb-32 md:pt-32 md:pb-40 w-full mt-12 overflow-hidden relative z-10"
       >
         {/* High-performance ambient fog/cloud layer (Zero-lag: uses GPU transform and radial gradients instead of blur) */}
         <div className="absolute top-0 left-0 right-0 h-[500px] pointer-events-none z-0 overflow-hidden" aria-hidden>
           <div 
             className="absolute top-[-150px] left-[-20%] w-[80%] h-[500px] will-change-transform"
             style={{ 
-              background: "radial-gradient(ellipse, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%)",
+              background: "radial-gradient(ellipse, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 70%)",
               animation: "driftRight 20s ease-in-out infinite alternate" 
             }}
           />
           <div 
             className="absolute top-[-100px] right-[-10%] w-[70%] h-[400px] will-change-transform"
             style={{ 
-              background: "radial-gradient(ellipse, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0) 70%)",
+              background: "radial-gradient(ellipse, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0) 70%)",
               animation: "driftLeft 25s ease-in-out infinite alternate" 
             }}
           />
           <div 
             className="absolute top-[0px] left-[20%] w-[60%] h-[300px] will-change-transform"
             style={{ 
-              background: "radial-gradient(ellipse, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0) 70%)",
+              background: "radial-gradient(ellipse, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 70%)",
               animation: "driftUp 18s ease-in-out infinite alternate" 
             }}
           />
@@ -61,16 +61,16 @@ export function WorkSection() {
         <div className="max-w-6xl mx-auto px-6 md:px-8 relative z-10">
           
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 12, filter: "blur(12px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true, amount: 0.5 }}
-            transition={transition.medium}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="mb-14 md:mb-20 flex items-baseline gap-4"
           >
-            <h2 className="text-4xl md:text-[3.5rem] font-bold tracking-tight text-black">
+            <h2 className="text-4xl md:text-[3.5rem] font-bold tracking-tight text-white">
               Recent projects
             </h2>
-            <span className="text-sm font-mono text-black/40 tabular-nums">
+            <span className="text-sm font-mono text-white/40 tabular-nums">
               ({String(projects.length).padStart(2, "0")})
             </span>
           </motion.div>

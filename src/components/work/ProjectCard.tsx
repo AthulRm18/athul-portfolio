@@ -30,7 +30,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
     >
       <Link
         href={`/work/${project.slug}`}
-        className="group relative block rounded-[2rem] overflow-hidden bg-[#080808] border border-white/[0.04] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-white/[0.12] hover:scale-[1.015] hover:-translate-y-0.5 hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]"
+        className="group relative block rounded-[2rem] overflow-hidden bg-[#111111] border border-white/[0.04] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-white/[0.12] hover:scale-[1.015] hover:-translate-y-0.5 hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]"
       >
         {/* ── Top bar ─────────────────────────────────────────── */}
         <div className="relative z-10 flex items-center justify-between px-10 pt-8 pb-2">
@@ -46,7 +46,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
         </div>
 
         {/* ── Unified canvas: visual on left, text perfectly separated on right ── */}
-        <div className="relative flex items-center bg-[#080808]" style={{ height: "340px" }}>
+        <div className="relative flex items-center bg-[#111111]" style={{ height: "340px" }}>
 
           {/* Animation strictly left side (50% width) */}
           <div className="absolute top-0 bottom-0 left-0 w-[50%] overflow-hidden">
@@ -56,13 +56,13 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
             <div
               className="absolute inset-0 pointer-events-none"
               style={{
-                background: "linear-gradient(to right, rgba(8,8,8,0) 70%, rgba(8,8,8,1) 100%)",
+                background: "linear-gradient(to right, rgba(17,17,17,0) 70%, rgba(17,17,17,1) 100%)",
               }}
             />
           </div>
 
           {/* Text perfectly on the right side on solid black (50% width) */}
-          <div className="relative z-10 ml-auto w-[50%] flex flex-col justify-center px-12 h-full bg-[#080808]">
+          <div className="relative z-10 ml-auto w-[50%] flex flex-col justify-center px-12 h-full bg-[#111111]">
             <h3 className="text-2xl md:text-[2.2rem] font-semibold tracking-[-0.03em] text-white/95 leading-snug mb-4">
               {project.title}
             </h3>
