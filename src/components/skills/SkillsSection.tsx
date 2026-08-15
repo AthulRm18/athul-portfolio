@@ -46,16 +46,51 @@ function JavaIcon() {
   );
 }
 
+function TextIcon({ bg, text, color = "white" }: { bg: string; text: string; color?: string }) {
+  return (
+    <div 
+      style={{ backgroundColor: bg, color }} 
+      className="w-4 h-4 font-bold text-[8px] flex flex-shrink-0 items-center justify-center rounded-[3px] leading-none"
+    >
+      {text}
+    </div>
+  );
+}
+
 const skillCategories: SkillCategory[] = [
   {
     title: "LANGUAGES",
     skills: [
-      { name: "JavaScript", icon: <div className="w-4 h-4 bg-[#F7DF1E] text-black font-bold text-[10px] flex items-center justify-center rounded-sm">JS</div> },
       { name: "Python", icon: <PythonIcon /> },
-      { name: "TypeScript", icon: <div className="w-4 h-4 bg-[#3178C6] text-white font-bold text-[10px] flex items-center justify-center rounded-sm">TS</div> },
-      { name: "Go", icon: <div className="w-4 h-4 bg-[#00ADD8] text-white font-bold text-[10px] flex items-center justify-center rounded-sm">Go</div> },
       { name: "C", icon: <CIcon /> },
       { name: "Java", icon: <JavaIcon /> },
+    ],
+  },
+  {
+    title: "AI & ML",
+    skills: [
+      { name: "TensorFlow", icon: <TextIcon bg="#FF6F00" text="TF" /> },
+      { name: "PyTorch", icon: <TextIcon bg="#EE4C2C" text="PT" /> },
+      { name: "scikit-learn", icon: <TextIcon bg="#F7931E" text="SK" /> },
+      { name: "Pandas", icon: <TextIcon bg="#150458" text="PD" /> },
+      { name: "NumPy", icon: <TextIcon bg="#013243" text="NP" /> },
+    ],
+  },
+  {
+    title: "CONCEPTS",
+    skills: [
+      { name: "Neural Networks", icon: <TextIcon bg="#333333" text="NN" /> },
+      { name: "Feature Engineering", icon: <TextIcon bg="#333333" text="FE" /> },
+      { name: "Data Preprocessing", icon: <TextIcon bg="#333333" text="DP" /> },
+    ],
+  },
+  {
+    title: "TOOLS & DATABASES",
+    skills: [
+      { name: "FastAPI", icon: <TextIcon bg="#009688" text="FA" /> },
+      { name: "Docker", icon: <TextIcon bg="#2496ED" text="DK" /> },
+      { name: "MySQL", icon: <TextIcon bg="#4479A1" text="SQL" /> },
+      { name: "PostgreSQL", icon: <TextIcon bg="#336791" text="PG" /> },
     ],
   },
 ];
