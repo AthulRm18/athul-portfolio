@@ -23,8 +23,13 @@ export function HeroSection() {
         <WindowChrome title="~/athul — zsh" />
 
         <div className="relative px-6 py-10 md:px-16 md:py-20">
-          <motion.div variants={stagger.item} className="mb-6 flex flex-col gap-1">
-            <AppleHelloEffectEnglish className="h-14 md:h-20 text-fg" durationScale={1.1} />
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="mb-6 flex flex-col gap-1"
+          >
+            <AppleHelloEffectEnglish className="h-14 md:h-20 text-fg" durationScale={1.2} />
             <span className="text-sm md:text-base font-mono text-muted tracking-widest uppercase">
               Athul R Mohan
             </span>
