@@ -1,5 +1,5 @@
 import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
+
 import { WorkSection } from "@/components/work/WorkSection";
 import { AboutSection } from "@/components/about/AboutSection";
 import { SkillsSection } from "@/components/skills/SkillsSection";
@@ -25,11 +25,9 @@ export default function HomePage() {
           <ContactSection />
         </div>
         
-        <Footer />
-        
-        {/* Full-width interactive text at the absolute bottom */}
-        <div className="w-full flex items-center justify-center h-[30vh] sm:h-[40vh] md:h-[50vh] bg-black text-white overflow-hidden border-t border-white/[0.02]">
-          <FluidGradientText text="Athul R Mohan" svgViewBoxWidth={4000} />
+        {/* Full-width interactive text at the absolute bottom, partially cut off */}
+        <div className="w-full mt-16 md:mt-24 bg-black text-white overflow-hidden">
+          <FluidGradientText text="ATHUL R MOHAN" svgViewBoxWidth={2800} />
         </div>
       </main>
     </PageTransition>
