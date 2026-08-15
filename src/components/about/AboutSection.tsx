@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { stagger } from "@/lib/motion";
 import { site, gmailComposeUrl } from "@/lib/data/site";
+import { AthulSignature } from "@/components/about/AthulSignature";
 
 export function AboutSection() {
   const [isFirstVisit, setIsFirstVisit] = useState(true);
@@ -34,18 +35,7 @@ export function AboutSection() {
         >
           <div className="flex items-center whitespace-nowrap">
             hi. I&apos;m&nbsp;
-            <motion.span
-              initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
-              animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-              transition={{ 
-                duration: isFirstVisit ? 1.2 : 0, 
-                ease: "easeOut", 
-                delay: isFirstVisit ? 0.3 : 0 
-              }}
-              className="inline-block hover:text-white transition-colors"
-            >
-              Athul.
-            </motion.span>
+            <AthulSignature isFirstVisit={isFirstVisit} />
           </div>
         </motion.h1>
 
