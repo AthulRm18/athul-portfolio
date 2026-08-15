@@ -2,10 +2,14 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useState } from "react";
 import { stagger } from "@/lib/motion";
 import { site, gmailComposeUrl } from "@/lib/data/site";
+import { AppleHelloEffectEnglish } from "@/components/apple-hello-effect-english";
 
 export function AboutSection() {
+  const [showName, setShowName] = useState(false);
+
   return (
     <section
       id="about"
@@ -17,12 +21,24 @@ export function AboutSection() {
         animate="show"
         className="max-w-2xl"
       >
-        <motion.h1
+        <motion.div
           variants={stagger.item}
-          className="text-[clamp(2.75rem,7vw,4.5rem)] font-semibold tracking-[-0.04em] leading-[1.05]"
+          className="flex flex-wrap items-end gap-3 md:gap-5 mb-4"
         >
-          hi. I&apos;m <span className="inline-block hover:text-white transition-colors">Athul</span>.
-        </motion.h1>
+          <AppleHelloEffectEnglish 
+            className="h-12 sm:h-16 md:h-20 text-fg -mb-2 md:-mb-3" 
+            durationScale={1.1} 
+            onAnimationComplete={() => setShowName(true)}
+          />
+          <motion.h1
+            initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
+            animate={showName ? { opacity: 1, filter: "blur(0px)", y: 0 } : {}}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="text-[clamp(2.75rem,7vw,4.5rem)] font-semibold tracking-[-0.04em] leading-[1.05]"
+          >
+            I&apos;m <span className="inline-block hover:text-white transition-colors">Athul</span>.
+          </motion.h1>
+        </motion.div>
 
         <div className="mt-12 flex flex-col gap-6 max-w-[42rem]">
           <motion.p
