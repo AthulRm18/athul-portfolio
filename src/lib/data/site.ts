@@ -1,7 +1,7 @@
 /** Site-wide links — update here when contact info changes */
 export const site = {
   name: "Athul R Mohan",
-  email: "athumrm518@gmail.com",
+  email: "athulrm518@gmail.com",
   github: "https://github.com/AthulRm18",
   linkedin: "https://www.linkedin.com/in/athul-r-mohan-1abb87368",
 } as const;
