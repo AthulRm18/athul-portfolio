@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { transition } from "@/lib/motion";
 import { site } from "@/lib/data/site";
 
-const WEB3FORMS_KEY = "YOUR_ACCESS_KEY_HERE"; // User needs to replace with their Web3Forms access key
+const WEB3FORMS_KEY = "1ecec8e7-6d75-41d4-9c4b-803d8299fc78";
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
