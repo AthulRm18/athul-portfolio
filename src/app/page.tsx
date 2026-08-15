@@ -2,6 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WorkSection } from "@/components/work/WorkSection";
 import { AboutSection } from "@/components/about/AboutSection";
+import { SkillsSection } from "@/components/skills/SkillsSection";
 import { ContactSection } from "@/components/contact/ContactSection";
 import { PageTransition } from "@/components/layout/PageTransition";
 import { MobileNav } from "@/components/layout/MobileNav";
@@ -19,6 +20,7 @@ export default function HomePage() {
         <WorkSection />
         
         <div className="max-w-6xl mx-auto px-6 md:px-8">
+          <SkillsSection />
           <ContactSection />
           <Footer />
         </div>
