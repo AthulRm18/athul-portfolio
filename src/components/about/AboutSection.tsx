@@ -21,24 +21,27 @@ export function AboutSection() {
         animate="show"
         className="max-w-2xl"
       >
-        <motion.div
+        <motion.h1
           variants={stagger.item}
-          className="flex flex-wrap items-end gap-3 md:gap-5 mb-4"
+          className="flex flex-wrap items-center gap-[0.3em] mb-4 text-[clamp(2.75rem,7vw,4.5rem)] font-semibold tracking-[-0.04em] leading-[1.05]"
         >
           <AppleHelloEffectEnglish 
-            className="h-12 sm:h-16 md:h-20 text-fg -mb-2 md:-mb-3" 
+            className="h-[1.2em] text-fg" 
             durationScale={1.1} 
             onAnimationComplete={() => setShowName(true)}
           />
-          <motion.h1
-            initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
-            animate={showName ? { opacity: 1, filter: "blur(0px)", y: 0 } : {}}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="text-[clamp(2.75rem,7vw,4.5rem)] font-semibold tracking-[-0.04em] leading-[1.05]"
-          >
-            I&apos;m <span className="inline-block hover:text-white transition-colors">Athul</span>.
-          </motion.h1>
-        </motion.div>
+          <div className="flex items-center whitespace-nowrap">
+            I&apos;m&nbsp;
+            <motion.span
+              initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
+              animate={showName ? { opacity: 1, filter: "blur(0px)", y: 0 } : {}}
+              transition={{ duration: 1.2, ease: "easeOut" }}
+              className="inline-block hover:text-white transition-colors"
+            >
+              Athul.
+            </motion.span>
+          </div>
+        </motion.h1>
 
         <div className="mt-12 flex flex-col gap-6 max-w-[42rem]">
           <motion.p
@@ -75,7 +78,6 @@ export function AboutSection() {
           >
             Email
           </a>
-          <span className="text-border select-none">/</span>
           <a
             href={site.github}
             target="_blank"
@@ -84,7 +86,6 @@ export function AboutSection() {
           >
             GitHub
           </a>
-          <span className="text-border select-none">/</span>
           <a
             href={site.linkedin}
             target="_blank"
@@ -93,7 +94,6 @@ export function AboutSection() {
           >
             LinkedIn
           </a>
-          <span className="text-border select-none">/</span>
           <Link href="#work" className="hover:text-fg transition-colors">
             Projects ↓
           </Link>

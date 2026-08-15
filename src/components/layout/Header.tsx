@@ -46,12 +46,6 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-5 shrink-0">
-            <ExternalLink href={site.github} className="hidden md:inline-flex text-[13px]">
-              GitHub
-            </ExternalLink>
-            <ExternalLink href={site.linkedin} className="hidden md:inline-flex text-[13px]">
-              LinkedIn
-            </ExternalLink>
           </div>
         </div>
       </div>
