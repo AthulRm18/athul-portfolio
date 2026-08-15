@@ -2,13 +2,20 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { stagger } from "@/lib/motion";
 import { site, gmailComposeUrl } from "@/lib/data/site";
-import { AppleHelloEffectEnglish } from "@/components/apple-hello-effect-english";
 
 export function AboutSection() {
-  const [showName, setShowName] = useState(false);
+  const [isFirstVisit, setIsFirstVisit] = useState(true);
+
+  useEffect(() => {
+    if (sessionStorage.getItem("athulAnimated")) {
+      setIsFirstVisit(false);
+    } else {
+      sessionStorage.setItem("athulAnimated", "true");
+    }
+  }, []);
 
   return (
     <section
@@ -25,17 +32,16 @@ export function AboutSection() {
           variants={stagger.item}
           className="flex flex-wrap items-center gap-[0.3em] mb-4 text-[clamp(2.75rem,7vw,4.5rem)] font-semibold tracking-[-0.04em] leading-[1.05]"
         >
-          <AppleHelloEffectEnglish 
-            className="h-[1.2em] text-fg" 
-            durationScale={1.1} 
-            onAnimationComplete={() => setShowName(true)}
-          />
           <div className="flex items-center whitespace-nowrap">
-            I&apos;m&nbsp;
+            hi. I&apos;m&nbsp;
             <motion.span
               initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
-              animate={showName ? { opacity: 1, filter: "blur(0px)", y: 0 } : {}}
-              transition={{ duration: 1.2, ease: "easeOut" }}
+              animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+              transition={{ 
+                duration: isFirstVisit ? 1.2 : 0, 
+                ease: "easeOut", 
+                delay: isFirstVisit ? 0.3 : 0 
+              }}
               className="inline-block hover:text-white transition-colors"
             >
               Athul.
