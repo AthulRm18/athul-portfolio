@@ -69,10 +69,16 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
             <p className="text-[15px] text-white/50 leading-relaxed mb-10 max-w-[320px]">
               {project.hook}
             </p>
-            <span className="inline-flex items-center gap-2 text-[11px] font-mono tracking-[0.15em] uppercase text-white/30 group-hover:text-white/90 transition-colors duration-400">
-              Full breakdown
-              <span className="transition-transform duration-400 group-hover:translate-x-1" aria-hidden>→</span>
-            </span>
+            <div className="flex items-center rounded-full bg-[#222] border border-white/5 text-white/90 h-[34px] overflow-hidden transition-[max-width,background-color] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] max-w-[34px] group-hover:max-w-[160px] group-hover:bg-[#333]">
+              <div className="flex-shrink-0 flex items-center justify-center w-[34px] h-[34px]">
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                </svg>
+              </div>
+              <span className="whitespace-nowrap pr-4 text-[11px] font-semibold tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+                Read more
+              </span>
+            </div>
           </div>
 
         </div>

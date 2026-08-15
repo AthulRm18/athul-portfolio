@@ -23,12 +23,13 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-6 md:px-8">
           <SkillsSection />
           <ContactSection />
-          
-          <div className="w-full flex items-center justify-center py-16 md:py-32 relative text-white">
-            <FluidGradientText text="Athul R Mohan" />
-          </div>
-
-          <Footer />
+        </div>
+        
+        <Footer />
+        
+        {/* Full-width interactive text at the absolute bottom */}
+        <div className="w-full flex items-center justify-center h-[30vh] sm:h-[40vh] md:h-[50vh] bg-black text-white overflow-hidden border-t border-white/[0.02]">
+          <FluidGradientText text="Athul R Mohan" svgViewBoxWidth={4000} />
         </div>
       </main>
     </PageTransition>
