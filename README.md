@@ -1,38 +1,47 @@
 # Athul R Mohan — Portfolio
 
-High-end minimalist portfolio for a **B.Tech student** showcasing AI/ML projects — built with **Next.js 15**, **Tailwind CSS v4**, and **Framer Motion**.
+A modern personal portfolio website built to showcase my projects, technical skills, and professional profile.
 
-## Development
+## Overview
+
+This portfolio is designed to give a clear view of who I am, what I build, and the kind of work I am interested in. It features selected projects, case studies, contact links, and resume access in a clean and minimal interface.
+
+## What this website includes
+
+- Featured projects and case studies
+- AI/ML and software development focus areas
+- Personal profile and introduction
+- Contact and social links
+- Resume download
+
+## Tech Stack
+
+- Next.js 15
+- Tailwind CSS v4
+- Framer Motion
+
+## Run Locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Visit `http://localhost:3000` after starting the development server.
 
-## Customize
+## Content Management
 
-| What | Where |
-|------|--------|
-| Projects & case studies | `src/lib/data/projects.ts` |
-| Hero audience copy | `src/lib/data/audience.ts` + `src/components/hero/AudienceBar.tsx` |
-| Email & social links | `src/lib/data/site.ts` (used in Header + Contact) |
-| Resume | Add `public/resume.pdf` |
+| Section | File |
+|------|------|
+| Projects and case studies | `src/lib/data/projects.ts` |
+| Hero and audience content | `src/lib/data/audience.ts` + `src/components/hero/AudienceBar.tsx` |
+| Contact and social links | `src/lib/data/site.ts` |
+| Resume file | `public/resume.pdf` |
 
-## Deploy to Vercel
+## Deployment
 
-1. Push this repo to GitHub.
-2. Import the project at [vercel.com/new](https://vercel.com/new).
-3. Framework preset: **Next.js** (auto-detected).
-4. Deploy.
+This website can be deployed directly on Vercel with no extra configuration.
 
-No extra config required.
+## Purpose
 
-## Design notes
-
-- True black background, warm amber accent (no purple/blue AI tropes)
-- 8-point spacing via Tailwind and `grid-8` utility
-- Skeleton loaders, empty states, and route-level `loading.tsx`
-- Audience switcher (Engineers view uses code-infused typography)
-- macOS-style window frames for hero and contact sections
+This repository contains the source code for my portfolio website and acts as the central place for maintaining my public developer presence online.
