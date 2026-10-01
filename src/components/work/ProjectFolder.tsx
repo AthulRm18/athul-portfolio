@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import FolderFloat from "@/components/FolderFloat";
-import { projects, type Project } from "@/lib/data/projects";
+import { projects } from "@/lib/data/projects";
 
 /**
  * A scroll-triggered FolderFloat that opens when the user scrolls to the
@@ -34,11 +34,8 @@ export function ProjectFolder() {
     return () => observer.disconnect();
   }, []);
 
-  // Map projects to FolderFloat items
-  const items = projects.map((p) => ({
-    label: p.title,
-    value: p.slug,
-  }));
+  // Map projects to FolderFloat items (expects string[])
+  const items = projects.map((p) => p.title);
 
   const handleSelect = (value: string) => {
     router.push(`/work/${value}`);
@@ -80,6 +77,7 @@ export function ProjectFolder() {
           physics
           drift={0.4}
           onSelect={(value: string) => handleSelect(value)}
+          onOpenChange={() => {}}
           folderColor="#1a1a1a"
           frontColor="#2a2a2a"
           paperColor="#e8a87c"
