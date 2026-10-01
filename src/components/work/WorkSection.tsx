@@ -38,8 +38,8 @@ export function WorkSection() {
             </span>
           </motion.div>
 
-          {/* All cards uniform, single column, stacked */}
-          <div className="flex flex-col gap-6 md:gap-8">
+          {/* 2-column grid on desktop, single column on mobile */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
             {projects.map((project, i) => (
               <ProjectCard key={project.id} project={project} index={i} />
             ))}
