@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { transition } from "@/lib/motion";
-import { cn } from "@/lib/utils";
+
 
 interface Skill {
   name: string;

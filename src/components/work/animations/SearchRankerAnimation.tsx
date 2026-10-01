@@ -1,6 +1,6 @@
 "use client";
 
-const ITEMS = [
+const ITEMS: { id: string; label: string; score: number; rank: number; demote?: boolean; promote?: boolean }[] = [
   { id: "r1", label: "TechFlow Pro",   score: 94, rank: 1, demote: false },
   { id: "r2", label: "QuickBuy Store", score: 71, rank: 2, demote: true  },
   { id: "r3", label: "Verified Goods", score: 88, rank: 3, promote: true },
@@ -34,7 +34,7 @@ export function SearchRankerAnimation() {
             style={{
               border: "1px solid rgba(255,255,255,0.06)",
               background: "rgba(255,255,255,0.02)",
-              animation: (item as any).promote
+              animation: item.promote
                 ? "sr-up 4s ease-in-out infinite"
                 : item.demote
                 ? "sr-down 4s ease-in-out infinite"

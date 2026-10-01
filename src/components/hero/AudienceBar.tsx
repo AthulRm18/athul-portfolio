@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import type { AudienceId } from "@/lib/data/audience";
 import { audiences } from "@/lib/data/audience";
-import { transition, ease } from "@/lib/motion";
+import { ease } from "@/lib/motion";
 
 interface AudienceBarProps {
   active: AudienceId;

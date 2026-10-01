@@ -10,8 +10,7 @@ import { stagger, transition } from "@/lib/motion";
 
 export function HeroSection() {
   const [audience, setAudience] = useState<AudienceId>("anyone");
-  const [showName, setShowName] = useState(false);
-  const active = audiences.find((a) => a.id === audience)!;
+  const active = audiences.find((a) => a.id === audience)!
 
   return (
     <section className="min-h-[88vh] flex flex-col justify-center pt-28 pb-16">

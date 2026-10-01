@@ -2,8 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
-import { ExternalLink } from "@/components/ui/ExternalLink";
-import { site } from "@/lib/data/site";
+
 
 const navItems = [
   { href: "/#about", label: "About" },
