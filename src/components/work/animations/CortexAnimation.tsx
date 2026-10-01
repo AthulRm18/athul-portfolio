@@ -87,14 +87,14 @@ export function CortexAnimation() {
               data-role="ring"
               cx={n.x} cy={n.y} r={n.ring}
               fill="none"
-              stroke="rgba(255,255,255,0.07)"
+              stroke="rgba(232,168,124,0.18)"
               strokeWidth="0.8"
               style={{ transition: "stroke 0.5s ease, opacity 0.5s ease" }}
             />
             <circle
               data-role="fill"
               cx={n.x} cy={n.y} r={n.r}
-              fill={n.center ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.07)"}
+              fill={n.center ? "rgba(232,168,124,0.7)" : "rgba(232,168,124,0.2)"}
               style={{ transition: "fill 0.5s ease" }}
             />
           </g>
@@ -104,7 +104,7 @@ export function CortexAnimation() {
         <circle
           cx={np("c").x} cy={np("c").y} r="28"
           fill="none"
-          stroke="rgba(255,255,255,0.05)"
+          stroke="rgba(232,168,124,0.12)"
           strokeWidth="0.8"
           style={{ animation: "cx-outer 3.5s ease-in-out infinite" }}
         />
@@ -140,11 +140,11 @@ function setEdge(svg: SVGSVGElement, a: string, b: string, state: "fault"|"heal"
      svg.querySelector(`[data-edge="${b}-${a}"]`)) as SVGLineElement | null;
   if (!el) return;
   if (state === "fault") {
-    el.setAttribute("stroke", "rgba(255,255,255,0.02)");
+    el.setAttribute("stroke", "rgba(232,168,124,0.04)");
     el.setAttribute("stroke-width", "0.8");
   } else {
-    el.setAttribute("stroke", "rgba(255,255,255,0.45)");
-    el.setAttribute("stroke-width", "1.2");
+    el.setAttribute("stroke", "rgba(255,210,160,0.7)");
+    el.setAttribute("stroke-width", "1.4");
   }
 }
 
@@ -153,16 +153,16 @@ function reset(svg: SVGSVGElement) {
     const g = svg.querySelector(`[data-node="${n.id}"]`);
     if (!g) return;
     (g.querySelector("[data-role='ring']") as SVGCircleElement)
-      .setAttribute("stroke", "rgba(255,255,255,0.07)");
+      .setAttribute("stroke", "rgba(232,168,124,0.18)");
     (g.querySelector("[data-role='fill']") as SVGCircleElement)
-      .setAttribute("fill", n.center ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.07)");
+      .setAttribute("fill", n.center ? "rgba(232,168,124,0.7)" : "rgba(232,168,124,0.2)");
   });
   EDGES.forEach(([a, b]) => {
     const el =
       (svg.querySelector(`[data-edge="${a}-${b}"]`) ||
        svg.querySelector(`[data-edge="${b}-${a}"]`)) as SVGLineElement | null;
     if (!el) return;
-    el.setAttribute("stroke", "rgba(255,255,255,0.09)");
+    el.setAttribute("stroke", "rgba(232,168,124,0.18)");
     el.setAttribute("stroke-width", "0.8");
   });
 }

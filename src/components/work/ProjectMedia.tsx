@@ -24,7 +24,7 @@ export function ProjectMedia({
 
   return (
     <div
-      className={`relative min-h-[240px] md:min-h-full bg-[#080808] overflow-hidden ${className}`}
+      className={`relative min-h-[240px] md:min-h-full overflow-hidden ${className}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >

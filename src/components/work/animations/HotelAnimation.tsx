@@ -1,6 +1,6 @@
 "use client";
 
-// Hotel cancellation bar chart — pure monochrome
+// Hotel cancellation bar chart — orange palette
 
 const BARS = [
   { label: "Jan", value: 62, risk: false },
@@ -26,11 +26,11 @@ export function HotelAnimation() {
                 style={{
                   height: `${(bar.value / 100) * H}px`,
                   background: bar.risk
-                    ? "rgba(255,255,255,0.15)"
-                    : "rgba(255,255,255,0.07)",
+                    ? "rgba(232,168,124,0.35)"
+                    : "rgba(232,168,124,0.12)",
                   border: bar.risk
-                    ? "1px solid rgba(255,255,255,0.35)"
-                    : "1px solid rgba(255,255,255,0.06)",
+                    ? "1px solid rgba(255,210,160,0.7)"
+                    : "1px solid rgba(232,168,124,0.2)",
                   animation: `hb-grow 0.7s cubic-bezier(0.16,1,0.3,1) ${i * 0.07}s both`,
                   transformOrigin: "bottom",
                 }}
@@ -40,7 +40,7 @@ export function HotelAnimation() {
                     className="absolute inset-0"
                     style={{
                       background:
-                        "linear-gradient(to top, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.05) 100%)",
+                        "linear-gradient(to top, rgba(255,210,160,0.5) 0%, rgba(232,168,124,0.1) 100%)",
                       animation: "hb-risk 2.2s ease-in-out infinite",
                     }}
                   />
@@ -58,8 +58,8 @@ export function HotelAnimation() {
                 className="text-[8px] font-mono"
                 style={{
                   color: bar.risk
-                    ? "rgba(255,255,255,0.45)"
-                    : "rgba(255,255,255,0.18)",
+                    ? "rgba(255,210,160,0.8)"
+                    : "rgba(232,168,124,0.35)",
                 }}
               >
                 {bar.label}
@@ -72,16 +72,16 @@ export function HotelAnimation() {
         <div
           className="mt-3 rounded border px-2.5 py-2 flex items-center gap-2"
           style={{
-            borderColor: "rgba(255,255,255,0.12)",
-            background: "rgba(255,255,255,0.04)",
+            borderColor: "rgba(232,168,124,0.25)",
+            background: "rgba(232,168,124,0.06)",
             animation: "hb-in 0.6s ease 0.7s both",
           }}
         >
           <div
-            className="w-1.5 h-1.5 rounded-full shrink-0 bg-white/70"
-            style={{ animation: "hb-blink 1.8s ease-in-out infinite" }}
+            className="w-1.5 h-1.5 rounded-full shrink-0"
+            style={{ background: "rgba(255,210,160,0.9)", animation: "hb-blink 1.8s ease-in-out infinite" }}
           />
-          <span className="text-[9px] font-mono text-white/30">
+          <span className="text-[9px] font-mono" style={{ color: "rgba(232,168,124,0.55)" }}>
             April — elevated cancellation risk
           </span>
         </div>
@@ -89,9 +89,9 @@ export function HotelAnimation() {
 
       <style>{`
         @keyframes hb-grow  { from { transform:scaleY(0); opacity:0; } to { transform:scaleY(1); opacity:1; } }
-        @keyframes hb-risk  { 0%,100%{opacity:0.55;} 50%{opacity:1;} }
+        @keyframes hb-risk  { 0%,100%{opacity:0.6;} 50%{opacity:1;} }
         @keyframes hb-in    { from{opacity:0;transform:translateY(6px);} to{opacity:1;transform:translateY(0);} }
-        @keyframes hb-blink { 0%,100%{opacity:0.7;} 50%{opacity:0.2;} }
+        @keyframes hb-blink { 0%,100%{opacity:0.8;} 50%{opacity:0.3;} }
       `}</style>
     </div>
   );
