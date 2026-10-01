@@ -3,50 +3,35 @@
 import { motion } from "framer-motion";
 import { projects } from "@/lib/data/projects";
 import { ProjectCard } from "@/components/work/ProjectCard";
-import { transition } from "@/lib/motion";
 
 export function WorkSection() {
   return (
-    <section id="work" className="relative scroll-mt-0">
-      {/* 
-        Apple-style "slide up" foggy white container.
-        This provides a distinct section break from the black hero.
-      */}
-      <motion.div 
-        initial={{ opacity: 0, y: 80 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.05 }}
-        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-        className="rounded-t-[3rem] md:rounded-t-[4rem] border-t border-white/[0.12] pt-24 pb-32 md:pt-32 md:pb-40 w-full mt-12 relative z-10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.2)]"
-        style={{ backgroundImage: "linear-gradient(to bottom, #434343, #000000 40%)" }}
-      >
+    <section id="work" className="relative scroll-mt-0 pt-24 pb-32 md:pt-32 md:pb-40">
+      <div className="max-w-6xl mx-auto px-6 md:px-8">
 
-        <div className="max-w-6xl mx-auto px-6 md:px-8 relative z-10">
-          
-          <motion.div
-            initial={{ opacity: 0, y: 12, filter: "blur(12px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-14 md:mb-20 flex items-baseline gap-4"
-          >
-            <h2 className="text-4xl md:text-[3.5rem] font-bold tracking-tight text-white">
-              Recent projects
-            </h2>
-            <span className="text-sm font-mono text-white/40 tabular-nums">
-              ({String(projects.length).padStart(2, "0")})
-            </span>
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 12, filter: "blur(12px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-14 md:mb-20 flex items-baseline gap-4"
+        >
+          <h2 className="text-4xl md:text-[3.5rem] font-bold tracking-tight text-white">
+            Recent projects
+          </h2>
+          <span className="text-sm font-mono text-white/40 tabular-nums">
+            ({String(projects.length).padStart(2, "0")})
+          </span>
+        </motion.div>
 
-          {/* 2-column grid on desktop, single column on mobile */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
-            {projects.map((project, i) => (
-              <ProjectCard key={project.id} project={project} index={i} />
-            ))}
-          </div>
-
+        {/* 2-column grid on desktop, single column on mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+          {projects.map((project, i) => (
+            <ProjectCard key={project.id} project={project} index={i} />
+          ))}
         </div>
-      </motion.div>
+
+      </div>
     </section>
   );
 }
